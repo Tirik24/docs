@@ -2401,7 +2401,6 @@ amount| true | double |- | 数量 |
 # Websocket 订阅
 
   - <a href='https://github.com/huobiapi/API_Docs/wiki/WS_request'>Websocket 文档 </a>
-  
 
 <br>
 
