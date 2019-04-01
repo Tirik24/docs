@@ -2707,7 +2707,7 @@ URL /market/depth
 
 **tick 说明:**
 
-```json
+```
     "tick": {
       "id": 消息id.
       "ts": 消息生成时间，单位：毫秒.
@@ -2767,7 +2767,7 @@ URL /market/history/kline
   |ts|  true|number|    响应生成时间点，单位：毫秒|| 
 
 **Data说明：**
-```json
+```
 "data": [
   {
     "id": K线id,
@@ -2835,7 +2835,7 @@ URL /market/detail/merged
   |ts|  true|number|    响应生成时间点，单位：毫秒|| 
 
 **tick说明:**
-```json
+```
     "tick": {
       "id": K线id,
       "vol": 成交量（张）,
@@ -2895,7 +2895,7 @@ URL /market/trade
   |ts|  true|number|发送时间|||
 
 **Tick说明：**
-```json
+```
     "tick": {
       "id": 消息id,
       "ts": 最新成交时间,
@@ -2956,7 +2956,7 @@ URL /market/history/trade
   |ts|  true|number|    响应生成时间点，单位：毫秒||
 
 **data说明：**
-```json
+```
     "data": {
       "id": 消息id,
       "ts": 最新成交时间,
