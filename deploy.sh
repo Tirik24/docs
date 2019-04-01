@@ -21,7 +21,7 @@ Options:
 
 
 run_build() {
-  build_dir=$build_directory/v$version/$language
+  build_dir=$build_directory/$version/$language
   echo "build_dir="$build_dir
   bundle exec middleman build --clean --build-dir $build_dir
 }
@@ -82,13 +82,13 @@ parse_args() {
 }
 
 check_version_lang() {
-  # 检查当前版本号和语言
+  #
   branch=$(git describe --contains --all HEAD)
   echo "branch="$branch""
   #
-  language=$(echo $branch | cut -d '_' -f 2)
-  version=$(echo $branch | cut -d '_' -f 1)
-  version=${version:1}
+  language=$(echo $branch)
+  version=$(echo $branch)
+  version=${version}
   #
   echo "language="$language""
   echo "version="$version""
@@ -137,6 +137,14 @@ main() {
       echo "./gh-pages exists"
   fi
 
+  # if git ls-remote --exit-code $repo "refs/heads/$deploy_branch" ; then
+  #   # deploy_branch exists in $repo; make sure we have the latest version
+
+  #   disable_expanded_output
+  #   git fetch --force $repo $deploy_branch:$deploy_branch
+  #   enable_expanded_output
+  # fi
+
   # check if deploy_branch exists locally
   if git show-ref --verify --quiet "refs/heads/$deploy_branch"; then 
     if git ls-remote --exit-code $repo "refs/heads/$deploy_branch" ; then
@@ -154,7 +162,6 @@ main() {
 }
 
 handle_deploy_files() {
-
   if [ -d "$gh_pages_directory/$version/$language" ]; then
     rm -rf $gh_pages_directory/$version/$language
   fi
@@ -272,3 +279,5 @@ else
   run_build
   main
 fi
+
+
