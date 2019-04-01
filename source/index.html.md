@@ -2709,10 +2709,10 @@ URL /market/depth
 
 ```json
     "tick": {
-      "id": 消息id.
-      "ts": 消息生成时间，单位：毫秒.
-      "bids": 买盘,[price(挂单价), vol(此价格挂单张数)], //按price降序.
-      "asks": 卖盘,[price(挂单价), vol(此价格挂单张数)]  //按price升序.
+      "id": 消息id.
+      "ts": 消息生成时间，单位：毫秒.
+      "bids": 买盘,[price(挂单价), vol(此价格挂单张数)], //按price降序.
+      "asks": 卖盘,[price(挂单价), vol(此价格挂单张数)]  //按price升序.
       "ch": 数据所属的 channel,
       "mrid": 订单ID,
       "ts": 时间戳,
